@@ -2312,6 +2312,10 @@ input, select, textarea {
 		top: 0;
 		width: 100%;
 		z-index: 10000;
+        /* התיקונים למרכוז: */
+        display: flex; /* הופך את ה-header ל-flex container */
+        justify-content: center; /* ממקם את התוכן הפנימי (ה-nav) במרכז אופקית */
+        align-items: center; /* ממקם את התוכן הפנימי (ה-nav) במרכז אנכית */
 	}
 
 		#header h1 {
@@ -2325,20 +2329,24 @@ input, select, textarea {
 
 		#header nav {
 			letter-spacing: 0.075em;
-			position: absolute;
-			right: 1.5em;
+			/* הוסר: position: absolute;, right: 1.5em;, top: 0.75em; */
+            /* מאפיינים אלו בוטלו כדי לאפשר ל-flexbox לשלוט במיקום הניווט. */
 			text-transform: uppercase;
-			top: 0.75em;
 		}
 
 			#header nav ul {
 				list-style: none;
 				padding-left: 0;
+                /* התיקונים למרכוז: */
+                display: flex; /* הופך את ה-ul ל-flex container כדי למרכז את ה-li */
+                justify-content: center; /* ממקם את פריטי הרשימה במרכז אופקית */
+                align-items: center; /* ממקם את פריטי הרשימה במרכז אנכית */
+                margin: 0; /* מוודא שאין שוליים ברירת מחדל שמונעים מרכוז */
 			}
 
 				#header nav ul li {
-					display: inline-block;
-					margin-left: 1.5em;
+					display: inline-block; /* שומר על הצגה בשורה, אך ה-flexbox שולט ביישור */
+					margin-left: 1.5em; /* מרווח בין פריטי התפריט */
 					padding-left: 0;
 				}
 
@@ -2419,15 +2427,14 @@ input, select, textarea {
 		}
 
 			#header.alt nav {
-				right: 2.5em;
-				top: 1.75em;
+				/* גם כאן, נסיר את המיקום האבסולוטי ואת right ו-top אם נרצה מרכוז גם במצב "alt" */
+				/* right: 2.5em; */
+				/* top: 1.75em; */
 			}
 
 				#header.alt nav ul li.active > a, #header.alt nav ul li:hover > a {
 					border: solid 1px;
-				
-                 }
-
+				}
 /* Dropotron */
 
 	.dropotron {
