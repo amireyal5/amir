@@ -2426,6 +2426,14 @@ input, select, textarea {
 				#header.alt nav ul li.active > a, #header.alt nav ul li:hover > a {
 					border: solid 1px;
 				}
+@media (min-width: 768px) {
+  #header nav {
+    justify-content: center;
+  }
+
+  #header nav ul {
+    justify-content: center;
+  }
 
 /* Dropotron */
 
