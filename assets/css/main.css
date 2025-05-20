@@ -2436,59 +2436,64 @@ input, select, textarea {
 					border: solid 1px;
 				}
 /* Dropotron */
+.dropotron {
+    list-style: none;
+    padding-left: 0;
+    background: #fff;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.075);
+    line-height: 2.25em;
+    min-width: 13em;
+    padding: 1em 0;
+    text-transform: uppercase;
+    /* הסר או שנה את margin-top */
+    /* margin-top: calc(-1em + 1px); */
+    position: absolute; /* הוסף את זה */
+    top: 100%; /* מקם את התפריט מתחת לפריט הראשי */
+    z-index: 10001; /* ודא שהוא מעל ההדר */
+}
 
-	.dropotron {
-		list-style: none;
-		padding-left: 0;
-		background: #fff;
-		box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.075);
-		line-height: 2.25em;
-		min-width: 13em;
-		padding: 1em 0;
-		text-transform: uppercase;
-		margin-top: calc(-1em + 1px);
-	}
+.dropotron.level-0 {
+    font-size: 0.7em;
+    font-weight: 400;
+    /* הסר או שנה את margin-top */
+    /* margin-top: 1.5em; */
+}
 
-		.dropotron.level-0 {
-			font-size: 0.7em;
-			font-weight: 400;
-			margin-top: 1.5em;
-		}
+.dropotron.level-0:before {
+    border-bottom: solid 0.5em #fff;
+    border-left: solid 0.5em transparent;
+    border-right: solid 0.5em transparent;
+    content: '';
+    left: 0.75em;
+    position: absolute;
+    top: -0.45em;
+}
 
-			.dropotron.level-0:before {
-				border-bottom: solid 0.5em #fff;
-				border-left: solid 0.5em transparent;
-				border-right: solid 0.5em transparent;
-				content: '';
-				left: 0.75em;
-				position: absolute;
-				top: -0.45em;
-			}
+.dropotron > li {
+    border-top: solid 1px rgba(124, 128, 129, 0.2);
+    padding-left: 0;
+    position: relative; /* ייתכן שיהיה צורך להוסיף את זה כאן */
+}
 
-		.dropotron > li {
-			border-top: solid 1px rgba(124, 128, 129, 0.2);
-			padding-left: 0;
-		}
+.dropotron > li > a {
+    -moz-transition: none;
+    -webkit-transition: none;
+    -ms-transition: none;
+    transition: none;
+    color: inherit;
+    text-decoration: none;
+    padding: 0 1em;
+    border: 0;
+}
 
-			.dropotron > li > a {
-				-moz-transition: none;
-				-webkit-transition: none;
-				-ms-transition: none;
-				transition: none;
-				color: inherit;
-				text-decoration: none;
-				padding: 0 1em;
-				border: 0;
-			}
+.dropotron > li:hover > a {
+    background: #83d3c9;
+    color: #fff;
+}
 
-			.dropotron > li:hover > a {
-				background: #83d3c9;
-				color: #fff;
-			}
-
-			.dropotron > li:first-child {
-				border-top: 0;
-			}
+.dropotron > li:first-child {
+    border-top: 0;
+}
 
 /* Banner */
 
