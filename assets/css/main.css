@@ -2451,6 +2451,7 @@ input, select, textarea {
     position: absolute; /* הוסף את זה */
     top: 100%; /* מקם את התפריט מתחת לפריט הראשי */
     z-index: 10001; /* ודא שהוא מעל ההדר */
+    left: 0;
 }
 
 .dropotron.level-0 {
