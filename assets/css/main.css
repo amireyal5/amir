@@ -2392,7 +2392,7 @@ input, select, textarea {
 
 						#header nav ul li.submenu > a:before {
 							content: '\f107';
-							margin-right: 0.65em;
+							margin-left: 0.65em;
 						}
 
 					#header nav ul li.active > a, #header nav ul li:hover > a {
