@@ -2309,7 +2309,7 @@ input, select, textarea {
     left: 0;
     padding: 1em 1.5em;
 
-    position: fixed;
+    position: ststic;
     top: 0;
     width: 100%;
     z-index: 10000;
