@@ -1,4 +1,4 @@
-כ@import url("fontawesome-all.min.css");
+@import url("fontawesome-all.min.css");
 
 
 /*
@@ -2312,10 +2312,6 @@ input, select, textarea {
 		top: 0;
 		width: 100%;
 		z-index: 10000;
-        /* התיקונים למרכוז: */
-        display: flex; /* הופך את ה-header ל-flex container */
-        justify-content: center; /* ממקם את התוכן הפנימי (ה-nav) במרכז אופקית */
-        align-items: center; /* ממקם את התוכן הפנימי (ה-nav) במרכז אנכית */
 	}
 
 		#header h1 {
@@ -2329,24 +2325,20 @@ input, select, textarea {
 
 		#header nav {
 			letter-spacing: 0.075em;
-			/* הוסר: position: absolute;, right: 1.5em;, top: 0.75em; */
-            /* מאפיינים אלו בוטלו כדי לאפשר ל-flexbox לשלוט במיקום הניווט. */
+			position: absolute;
+			right: 1.5em;
 			text-transform: uppercase;
+			top: 0.75em;
 		}
 
 			#header nav ul {
 				list-style: none;
 				padding-left: 0;
-                /* התיקונים למרכוז: */
-                display: flex; /* הופך את ה-ul ל-flex container כדי למרכז את ה-li */
-                justify-content: center; /* ממקם את פריטי הרשימה במרכז אופקית */
-                align-items: center; /* ממקם את פריטי הרשימה במרכז אנכית */
-                margin: 0; /* מוודא שאין שוליים ברירת מחדל שמונעים מרכוז */
 			}
 
 				#header nav ul li {
-					display: inline-block; /* שומר על הצגה בשורה, אך ה-flexbox שולט ביישור */
-					margin-left: 1.5em; /* מרווח בין פריטי התפריט */
+					display: inline-block;
+					margin-left: 1.5em;
 					padding-left: 0;
 				}
 
@@ -2375,7 +2367,6 @@ input, select, textarea {
 
 					#header nav ul li.submenu > a {
 						text-decoration: none;
-						   position: relative;
 					}
 
 						#header nav ul li.submenu > a:before {
@@ -2393,7 +2384,7 @@ input, select, textarea {
 
 						#header nav ul li.submenu > a:before {
 							content: '\f107';
-							margin-left: 0.65em;
+							margin-right: 0.65em;
 						}
 
 					#header nav ul li.active > a, #header nav ul li:hover > a {
@@ -2428,74 +2419,69 @@ input, select, textarea {
 		}
 
 			#header.alt nav {
-				/* גם כאן, נסיר את המיקום האבסולוטי ואת right ו-top אם נרצה מרכוז גם במצב "alt" */
-				/* right: 2.5em; */
-				/* top: 1.75em; */
+				right: 2.5em;
+				top: 1.75em;
 			}
 
 				#header.alt nav ul li.active > a, #header.alt nav ul li:hover > a {
 					border: solid 1px;
-				}
+				
+                 }
+
 /* Dropotron */
-.dropotron {
-    list-style: none;
-    padding-left: 0;
-    background: #fff;
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.075);
-    line-height: 2.25em;
-    min-width: 13em;
-    padding: 1em 0;
-    text-transform: uppercase;
-    /* הסר או שנה את margin-top */
-    /* margin-top: calc(-1em + 1px); */
-    position: absolute; /* הוסף את זה */
-    top: 100%; /* מקם את התפריט מתחת לפריט הראשי */
-    z-index: 10001; /* ודא שהוא מעל ההדר */
-    left: 0;
-}
 
-.dropotron.level-0 {
-    font-size: 0.7em;
-    font-weight: 400;
-    /* הסר או שנה את margin-top */
-    /* margin-top: 1.5em; */
-}
+	.dropotron {
+		list-style: none;
+		padding-left: 0;
+		background: #fff;
+		box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.075);
+		line-height: 2.25em;
+		min-width: 13em;
+		padding: 1em 0;
+		text-transform: uppercase;
+		margin-top: calc(-1em + 1px);
+	}
 
-.dropotron.level-0:before {
-    border-bottom: solid 0.5em #fff;
-    border-left: solid 0.5em transparent;
-    border-right: solid 0.5em transparent;
-    content: '';
-    left: 0.75em;
-    position: absolute;
-    top: -0.45em;
-}
+		.dropotron.level-0 {
+			font-size: 0.7em;
+			font-weight: 400;
+			margin-top: 1.5em;
+		}
 
-.dropotron > li {
-    border-top: solid 1px rgba(124, 128, 129, 0.2);
-    padding-left: 0;
-    position: relative; /* ייתכן שיהיה צורך להוסיף את זה כאן */
-}
+			.dropotron.level-0:before {
+				border-bottom: solid 0.5em #fff;
+				border-left: solid 0.5em transparent;
+				border-right: solid 0.5em transparent;
+				content: '';
+				left: 0.75em;
+				position: absolute;
+				top: -0.45em;
+			}
 
-.dropotron > li > a {
-    -moz-transition: none;
-    -webkit-transition: none;
-    -ms-transition: none;
-    transition: none;
-    color: inherit;
-    text-decoration: none;
-    padding: 0 1em;
-    border: 0;
-}
+		.dropotron > li {
+			border-top: solid 1px rgba(124, 128, 129, 0.2);
+			padding-left: 0;
+		}
 
-.dropotron > li:hover > a {
-    background: #83d3c9;
-    color: #fff;
-}
+			.dropotron > li > a {
+				-moz-transition: none;
+				-webkit-transition: none;
+				-ms-transition: none;
+				transition: none;
+				color: inherit;
+				text-decoration: none;
+				padding: 0 1em;
+				border: 0;
+			}
 
-.dropotron > li:first-child {
-    border-top: 0;
-}
+			.dropotron > li:hover > a {
+				background: #83d3c9;
+				color: #fff;
+			}
+
+			.dropotron > li:first-child {
+				border-top: 0;
+			}
 
 /* Banner */
 
@@ -2604,53 +2590,7 @@ input, select, textarea {
 			#banner .inner footer {
 				margin: 2em 0 0 0;
 			}
-/* --- עיצוב כללי לקונטיינר הלוגו --- */
-#logo {
-    margin: 0;   /* מסיר שוליים חיצוניים כברירת מחדל של h1 */
-    padding: 0;  /* מסיר ריפוד כברירת מחדל */
-    line-height: 1; /* מונע רווחים אנכיים נוספים ש-h1 יכול להוסיף */
-}
 
-/* --- הסרת עיצוב קישור ברירת מחדל --- */
-#logo a {
-    text-decoration: none; /* מסיר קו תחתון מהקישור */
-    display: block;        /* הופך את הקישור לאלמנט בלוק כדי שיתפוס את כל השטח של התמונה */
-}
-
-#logo {
-    margin: 0;
-    padding: 0;
-    line-height: 1;
-}
-
-#logo a {
-    text-decoration: none;
-    display: block;
-}
-
-#logo img {
-    max-width: 150px; /* כאן תשנה את הערך לפי הצורך! */
-    height: auto;
-    display: block;
-}
-
-/* אפשרות: מרכוז הלוגו אם הוא אלמנט בודד בתוך ה-h1 */
-#logo img {
-    margin: 0 auto; /* ממקם את הלוגו במרכז אופקית בתוך ה-h1 */
-}
-
-/* אם אתה רוצה שהלוגו יהיה קטן יותר במכשירים ניידים */
-@media (max-width: 768px) {
-    #logo img {
-        max-width: 100px; /* דוגמה: 100px מקסימום רוחב לטאבלטים ומטה */
-    }
-}
-
-@media (max-width: 480px) {
-    #logo img {
-        max-width: 80px; /* דוגמה: 80px מקסימום רוחב למובייל */
-    }
-}
 /* Main */
 
 	#main {
