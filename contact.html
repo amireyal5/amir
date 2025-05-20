@@ -15,131 +15,40 @@
 	<body class="contact is-preload">
 		<div id="page-wrapper">
 
-			<header id="header" class="alt">
-    <nav id="nav">
-        <ul>
-            <li class="current"><a href="index.html">בית</a></li>
-            <li class="menu-item-with-submenu"> <a href="#">שירותים</a>
-            </li>
-            <ul class="submenu-row" data-parent="שירותים">
-                <li><a href="left-sidebar.html">Left Sidebar</a></li>
-                <li><a href="right-sidebar.html">Right Sidebar</a></li>
-                <li><a href="no-sidebar.html">No Sidebar</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li class="menu-item-with-submenu-nested"> <a href="#">Submenu</a>
-                </li>
-                 <ul class="submenu-row nested" data-parent="Submenu">
-                    <li><a href="#">Dolore Sed</a></li>
-                    <li><a href="#">Consequat</a></li>
-                    <li><a href="#">Lorem Magna</a></li>
-                    <li><a href="#">Sed Magna</a></li>
-                    <li><a href="#">Ipsum Nisl</a></li>
-                </ul>
-            </ul>
-            <li><a href="#" class="button primary">צרו קשר</a></li>
-        </ul>
-    </nav>
-</header>
-<head>
-    <style>
-        /* --- סגנון כללי להדר (פס אפור בהיר) --- */
-        #header {
-            background-color: #f2f2f2; /* צבע אפור בהיר לפס של ההדר */
-            padding: 10px 0; /* ריווח פנימי עליון ותחתון להדר */
-            /* ודא שאין כאן position: fixed; או sticky; כדי שלא יהיה דביק */
-        }
+			<!-- Header -->
+				<header id="header">
+					<h1 id="logo">
+    <a href="index.html">
+        <img src="images/logo5.png" alt="לוגו האתר" />
+    </a>
+</h1>
+					<nav id="nav">
+						<ul>
+							<li class="current"><a href="index.html">בית</a></li>
+							<li class="submenu">
+								<a href="#">שירותים</a>
+								<ul>
+									<li><a href="left-sidebar.html">Left Sidebar</a></li>
+									<li><a href="right-sidebar.html">Right Sidebar</a></li>
+									<li><a href="no-sidebar.html">No Sidebar</a></li>
+									<li><a href="contact.html">Contact</a></li>
+									<li class="submenu">
+										<a href="#">Submenu</a>
+										<ul>
+											<li><a href="#">Dolore Sed</a></li>
+											<li><a href="#">Consequat</a></li>
+											<li><a href="#">Lorem Magna</a></li>
+											<li><a href="#">Sed Magna</a></li>
+											<li><a href="#">Ipsum Nisl</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li><a href="#" class="button primary"> צרו קשר</a></li>
+						</ul>
+					</nav>
+				</header>
 
-        /* --- סגנון לוגו (הקטנה ומיקום) --- */
-        #logo {
-            text-align: center; /* ממקם את הלוגו במרכז */
-            margin-bottom: 10px; /* ריווח קטן בין הלוגו לתפריט */
-        }
-
-        #logo img {
-            width: 150px; /* רוחב הלוגו - שנה לפי הצורך */
-            height: auto; /* שומר על יחס הגובה-רוחב המקורי */
-        }
-
-        /* --- סגנון לתפריט הניווט הראשי --- */
-        #nav ul {
-            list-style: none; /* מסיר נקודות רשימה */
-            padding: 0;
-            margin: 0;
-            display: flex; /* מסדר את הפריטים בשורה */
-            justify-content: center; /* ממקם את הפריטים במרכז */
-            gap: 20px; /* רווח בין פריטי התפריט הראשי */
-            flex-wrap: wrap; /* מאפשר לשורות לרדת מתחת כאשר אין מספיק מקום */
-            position: relative; /* חיוני למיקום תפריטי המשנה המוחלטים */
-        }
-
-        #nav li a {
-            text-decoration: none; /* מסיר קו תחתון מקישורים */
-            color: #333; /* צבע טקסט לקישורים */
-            padding: 5px 10px; /* ריווח פנימי לקישורים */
-            display: block; /* כדי שהריווח יפעל כראוי */
-        }
-
-        #nav li a:hover {
-            color: #007bff; /* צבע בעת מעבר עכבר */
-        }
-
-        /* --- סגנון לתפריטי המשנה (השורה החדשה) --- */
-        .submenu-row {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex; /* פריטי תפריט המשנה יהיו בשורה */
-            justify-content: center; /* ממקם אותם במרכז השורה */
-            gap: 15px; /* רווח בין פריטי תפריט המשנה */
-            width: 100%; /* תופס את כל הרוחב הזמין */
-            background-color: #e0e0e0; /* צבע רקע לשורת תפריט המשנה */
-            padding: 10px 0; /* ריווח פנימי לשורת תפריט המשנה */
-
-            /* סגנון להסתרה ואנימציה */
-            opacity: 0; /* נסתר כברירת מחדל */
-            max-height: 0; /* מונע מהתפריט לתפוס גובה */
-            overflow: hidden; /* חותך את התוכן שחורג מהגובה */
-            transition: opacity 0.3s ease-out, max-height 0.3s ease-out; /* אנימציה חלקה */
-            pointer-events: none; /* מונע קליקים על התפריט כשהוא חבוי */
-            position: absolute; /* ממקם את תפריט המשנה יחסית לאב (ul#nav) */
-            left: 0;
-            right: 0;
-            z-index: 10; /* ודא שהתפריט נמצא מעל תוכן אחר */
-        }
-
-        /* הצגת תפריט המשנה כאשר מעבירים עכבר על פריט התפריט הראשי */
-        /* חשוב: מבנה ה-HTML צריך להיות כפי שהוגדר בתשובה הקודמת (sibling) */
-        #nav .menu-item-with-submenu:hover + .submenu-row {
-            opacity: 1; /* מופיע */
-            max-height: 100px; /* גובה מספיק כדי להציג את התפריט - התאם לפי הצורך */
-            pointer-events: auto; /* מאפשר קליקים כשהוא גלוי */
-        }
-
-        /* הצגת תפריט המשנה המקונן (אם קיים) */
-        .menu-item-with-submenu-nested:hover + .submenu-row.nested {
-            opacity: 1;
-            max-height: 100px; /* התאם את הגובה */
-            pointer-events: auto;
-        }
-
-        .submenu-row.nested {
-            background-color: #f8f8f8; /* צבע רקע מעט שונה לתפריט משנה מקונן */
-        }
-
-
-        /* סגנון לקישורים בתוך תפריטי המשנה */
-        .submenu-row li a {
-            padding: 5px 15px;
-            color: #555;
-            font-size: 0.9em; /* גודל פונט קטן יותר לתפריט משנה */
-        }
-
-        .submenu-row li a:hover {
-            background-color: #d0d0d0;
-            color: #333;
-        }
-    </style>
-</head>
 			<!-- Main -->
 				<article id="main">
 
