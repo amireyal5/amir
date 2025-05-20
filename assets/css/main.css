@@ -2361,6 +2361,7 @@ input, select, textarea {
 						line-height: 1em;
 						padding: 0.6em 0.75em;
 						text-decoration: none;
+						font-weight: 400;
 					}
 
 					#header nav ul li input[type="button"],
