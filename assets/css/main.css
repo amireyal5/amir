@@ -2423,7 +2423,7 @@ input, select, textarea {
 			-webkit-animation: none;
 			-ms-animation: none;
 			animation: none;
-			background: transparent;
+			background: #fff;
 			box-shadow: none;
 			color: #fff;
 			padding: 2em 2.5em;
