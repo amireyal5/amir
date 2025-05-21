@@ -2258,255 +2258,275 @@ input, select, textarea {
 			padding: 4em;
 		}
 
-/* Header */
 
-	@-moz-keyframes reveal-header {
-		0% {
-			top: -5em;
-		}
-
-		100% {
-			top: 0;
-		}
-	}
-
-	@-webkit-keyframes reveal-header {
-		0% {
-			top: -5em;
-		}
-
-		100% {
-			top: 0;
-		}
-	}
-
-	@-ms-keyframes reveal-header {
-		0% {
-			top: -5em;
-		}
-
-		100% {
-			top: 0;
-		}
-	}
-
-	@keyframes reveal-header {
-		0% {
-			top: -5em;
-		}
-
-		100% {
-			top: 0;
-		}
-	}
-
-	#header {
+/* סגנונות עבור ההדר הראשי */
+#header {
     background: #fff;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.075);
     color: inherit;
     cursor: default;
     font-size: 0.8em;
     left: 0;
-    padding: 1em 1.5em;
-
-    position: static;
+    padding: 1em 1.5em; /* שומר על הריפוד המקורי של ההדר */
+    position: static; /* שומר על position: static כפי שביקשת */
     top: 0;
     width: 100%;
     z-index: 10000;
     display: flex;
-    justify-content: space-evenly;
-    flex-direction: row;
+    justify-content: space-evenly; /* שומר על סידור הלוגו והניווט בשורה עם רווחים */
+    flex-direction: row; /* שומר על סידור הלוגו והניווט בשורה */
     flex-wrap: nowrap;
     align-content: flex-end;
     align-items: baseline;
+    /* הוספתי ריפוד עליון כדי לפנות מקום ללוגו שיועלה למעלה */
+    padding-top: 2em; /* הגדלתי את הריפוד העליון של ההדר */
 }
 
-		#header h1 {
-			font-weight: 900;
-			margin: 0;
-		}
-
-			#header h1 span {
-				font-weight: 300;
-			}
-
-		#header nav {
-			letter-spacing: 0.075em;
-			/* הוסר: position: absolute;, right: 1.5em;, top: 0.75em; */
-            /* מאפיינים אלו בוטלו כדי לאפשר ל-flexbox לשלוט במיקום הניווט. */
-			text-transform: uppercase;
-		}
-
-			#header nav ul {
-				list-style: none;
-				padding-left: 0;
-                /* התיקונים למרכוז: */
-                display: flex; /* הופך את ה-ul ל-flex container כדי למרכז את ה-li */
-                justify-content: center; /* ממקם את פריטי הרשימה במרכז אופקית */
-                align-items: center; /* ממקם את פריטי הרשימה במרכז אנכית */
-                margin: 0; /* מוודא שאין שוליים ברירת מחדל שמונעים מרכוז */
-			}
-
-				#header nav ul li {
-					display: inline-block; /* שומר על הצגה בשורה, אך ה-flexbox שולט ביישור */
-					margin-left: 1.5em; /* מרווח בין פריטי התפריט */
-					padding-left: 0;
-				}
-
-					#header nav ul li > ul {
-						display: none;
-					}
-
-					#header nav ul li a {
-						border: solid 1px transparent;
-						color: #433d3d;
-						display: inline-block;
-						line-height: 1em;
-						padding: 0.6em 0.75em;
-						text-decoration: none;
-						font-weight: 400;
-					}
-
-					#header nav ul li input[type="button"],
-					#header nav ul li input[type="submit"],
-					#header nav ul li input[type="reset"],
-					#header nav ul li button,
-					#header nav ul li .button {
-						font-size: 1em;
-						min-width: 0;
-						width: auto;
-					}
-
-					#header nav ul li.submenu > a {
-						text-decoration: none;
-					}
-
-						#header nav ul li.submenu > a:after {
-							-moz-osx-font-smoothing: grayscale;
-							-webkit-font-smoothing: antialiased;
-							display: inline-block;
-							font-style: normal;
-							font-variant: normal;
-							text-rendering: auto;
-							line-height: 1;
-							text-transform: none !important;
-							font-family: 'Font Awesome 5 Free';
-							font-weight: 900;
-						}
-
-						#header nav ul li.submenu > a:after {
-							content: '\f107';
-							margin-right: 0.65em;
-						}
-
-					#header nav ul li.active > a, #header nav ul li:hover > a {
-						-moz-transition: all 0.2s ease-in-out;
-						-webkit-transition: all 0.2s ease-in-out;
-						-ms-transition: all 0.2s ease-in-out;
-						transition: all 0.2s ease-in-out;
-						background: rgba(188, 202, 206, 0.15);
-					}
-
-					#header nav ul li.current > a {
-						font-weight: 400;
-					}
-
-		#header.reveal {
-			-moz-animation: reveal-header 0.5s;
-			-webkit-animation: reveal-header 0.5s;
-			-ms-animation: reveal-header 0.5s;
-			animation: reveal-header 0.5s;
-		}
-
-		#header.alt {
-			-moz-animation: none;
-			-webkit-animation: none;
-			-ms-animation: none;
-			animation: none;
-			background: #fff;
-			box-shadow: none;
-			color: #fff;
-			padding: 2em 2.5em;
-			
-		}
-
-			#header.alt nav {
-				/* גם כאן, נסיר את המיקום האבסולוטי ואת right ו-top אם נרצה מרכוז גם במצב "alt" */
-				/* right: 2.5em; */
-				/* top: 1.75em; */
-			}
-
-				#header.alt nav ul li.active > a, #header.alt nav ul li:hover > a {
-					border: solid 1px;
-				}
-#nav-bar-bg {
-  width: 100%;
-  background-color: #f2f2f2; /* צבע הפס */
-  border-top: 1px solid #ccc; /* קו עליון דק (אם תרצה) */
-  padding: 0.75em 0;
-  box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.05); /* צל דק למעלה */
+/* סגנונות ללוגו - העלאה למעלה */
+#logo {
+    font-weight: 900;
+    margin: 0;
+    margin-top: -1.5em; /* העלאת הלוגו למעלה */
+    /* ייתכן שיהיה צורך להתאים את הערך הזה בהתאם לגודל הלוגו והעיצוב הספציפי */
 }
 
-#nav-bar-bg nav {
-  max-width: 1200px; /* או הרוחב של תוכן האתר שלך */
-  margin: 0 auto;
-  padding: 0 2em;
+#logo img {
+    border-radius: 8px; /* פינות מעוגלות ללוגו */
+    /* סגנונות הגודל כבר מוגדרים ב-HTML inline */
+}
+
+/* סגנונות עבור תפריט הניווט עצמו */
+#header nav {
+    letter-spacing: 0.075em;
+    text-transform: uppercase;
+    background-color: #cccccc; /* צבע אפור לרקע של תפריט הניווט */
+    padding: 10px 20px; /* ריפוד פנימי לתפריט הניווט */
+    box-sizing: border-box; /* ודא שהריפוד נכלל ברוחב */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* יישור אנכי של פריטי הניווט בתוך הפס */
+    flex-grow: 1; /* מאפשר ל-nav לתפוס יותר מקום זמין ב-flex container */
+    /* זה יגרום לפס האפור להיות רחב יותר, אך עדיין לא 100% רוחב של ההדר אם הלוגו תופס מקום משמעותי */
+}
+
+#header nav ul {
+    list-style: none;
+    padding-left: 0;
+    display: flex; /* הופך את ה-ul ל-flex container כדי למרכז את ה-li */
+    justify-content: center; /* ממקם את פריטי הרשימה במרכז אופקית */
+    align-items: center; /* ממקם את פריטי הרשימה במרכז אנכית */
+    margin: 0; /* מוודא שאין שוליים ברירת מחדל שמונעים מרכוז */
+}
+
+#header nav ul li {
+    display: inline-block; /* שומר על הצגה בשורה, אך ה-flexbox שולט ביישור */
+    margin-left: 1.5em; /* מרווח בין פריטי התפריט */
+    padding-left: 0;
+}
+
+#header nav ul li > ul {
+    display: none; /* נשאר מוסתר, יופעל ע"י JavaScript */
+}
+
+#header nav ul li a {
+    border: solid 1px transparent;
+    color: #433d3d;
+    display: inline-block;
+    line-height: 1em;
+    padding: 0.6em 0.75em;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+#header nav ul li input[type="button"],
+#header nav ul li input[type="submit"],
+#header nav ul li input[type="reset"],
+#header nav ul li button,
+#header nav ul li .button {
+    font-size: 1em;
+    min-width: 0;
+    width: auto;
+    border-radius: 8px; /* פינות מעוגלות לכפתור */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* צל קל לכפתור */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* אנימציה למעבר עכבר */
+}
+
+#header nav ul li input[type="button"]:hover,
+#header nav ul li input[type="submit"]:hover,
+#header nav ul li input[type="reset"]:hover,
+#header nav ul li button:hover,
+#header nav ul li .button:hover {
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* צל עמוק יותר במעבר עכבר */
+}
+
+#header nav ul li.submenu > a {
+    text-decoration: none;
+}
+
+#header nav ul li.submenu > a:after {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+    text-transform: none !important;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    content: '\f107';
+    margin-right: 0.65em;
+}
+
+#header nav ul li.active > a, #header nav ul li:hover > a {
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    background: rgba(188, 202, 206, 0.15);
+}
+
+#header nav ul li.current > a {
+    font-weight: 400;
+}
+
+#header.reveal {
+    -moz-animation: reveal-header 0.5s;
+    -webkit-animation: reveal-header 0.5s;
+    -ms-animation: reveal-header 0.5s;
+    animation: reveal-header 0.5s;
+}
+
+#header.alt {
+    -moz-animation: none;
+    -webkit-animation: none;
+    -ms-animation: none;
+    animation: none;
+    background: #fff;
+    box-shadow: none;
+    color: #fff;
+    padding: 2em 2.5em;
+}
+
+/* סגנונות לאזור התוכן הראשי */
+#main {
+    padding-top: 20px; /* מרווח עליון כדי שהתוכן לא ידבק לפס האפור */
+}
+
+/* כלל CSS זמני לבדיקה: הצג תפריט משני בריחוף עכבר */
+/* הסר או הער כלל זה לאחר שתאשר שהסקריפטים של Dropotron עובדים כראוי */
+#nav ul li.submenu:hover > ul {
+    display: block; /* הצג את התפריט המשני בריחוף */
+    position: absolute; /* כדי שהתפריט המשני יופיע מעל התוכן */
+    background-color: #f9f9f9; /* רקע לתפריט המשני */
+    min-width: 160px; /* רוחב מינימלי לתפריט המשני */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* צל לתפריט המשני */
+    z-index: 100; /* ודא שהוא מעל שאר התוכן */
+    padding: 10px 0;
+    border-radius: 8px; /* פינות מעוגלות */
+    text-align: right; /* יישור טקסט לימין */
+    right: 0; /* יישור לימין של פריט האב */
+    left: auto; /* ביטול יישור לשמאל */
+    margin-top: 5px; /* מרווח קל מפריט האב */
+}
+
+#nav ul li.submenu ul li {
+    display: block; /* ודא שפריטי התפריט המשני מופיעים אחד מתחת לשני */
+    margin: 0; /* ביטול מרווחים מיותרים */
+}
+
+#nav ul li.submenu ul li a {
+    padding: 8px 15px; /* ריפוד לפריטי התפריט המשני */
+    color: #333;
+    white-space: nowrap; /* מונע שבירת שורות */
+}
+
+#nav ul li.submenu ul li a:hover {
+    background-color: #e0e0e0; /* צבע רקע בריחוף על פריטי התפריט המשני */
 }
 
 /* Dropotron */
+/* שילוב הסגנונות הקיימים של Dropotron */
+.dropotron {
+    list-style: none;
+    padding-left: 0;
+    background: #fff;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.075);
+    line-height: 2.25em;
+    min-width: 13em;
+    padding: 1em 0;
+    text-transform: uppercase;
+    margin-top: calc(-1em + 1px);
+}
 
-	.dropotron {
-		list-style: none;
-		padding-left: 0;
-		background: #fff;
-		box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.075);
-		line-height: 2.25em;
-		min-width: 13em;
-		padding: 1em 0;
-		text-transform: uppercase;
-		margin-top: calc(-1em + 1px);
-	}
+.dropotron.level-0 {
+    font-size: 0.7em;
+    font-weight: 400;
+    margin-top: 1.5em;
+}
 
-		.dropotron.level-0 {
-			font-size: 0.7em;
-			font-weight: 400;
-			margin-top: 1.5em;
-		}
+.dropotron.level-0:before {
+    border-bottom: solid 0.5em #fff;
+    border-left: solid 0.5em transparent;
+    border-right: solid 0.5em transparent;
+    content: '';
+    left: 0.75em;
+    position: absolute;
+    top: -0.45em;
+}
 
-			.dropotron.level-0:before {
-				border-bottom: solid 0.5em #fff;
-				border-left: solid 0.5em transparent;
-				border-right: solid 0.5em transparent;
-				content: '';
-				left: 0.75em;
-				position: absolute;
-				top: -0.45em;
-			}
+.dropotron > li {
+    border-top: solid 1px rgba(124, 128, 129, 0.2);
+    padding-left: 0;
+}
 
-		.dropotron > li {
-			border-top: solid 1px rgba(124, 128, 129, 0.2);
-			padding-left: 0;
-		}
+.dropotron > li > a {
+    -moz-transition: none;
+    -webkit-transition: none;
+    -ms-transition: none;
+    transition: none;
+    color: inherit;
+    text-decoration: none;
+    padding: 0 1em;
+    border: 0;
+}
 
-			.dropotron > li > a {
-				-moz-transition: none;
-				-webkit-transition: none;
-				-ms-transition: none;
-				transition: none;
-				color: inherit;
-				text-decoration: none;
-				padding: 0 1em;
-				border: 0;
-			}
+.dropotron > li:hover > a {
+    background: #83d3c9;
+    color: #fff;
+}
 
-			.dropotron > li:hover > a {
-				background: #83d3c9;
-				color: #fff;
-			}
+.dropotron > li:first-child {
+    border-top: 0;
+}
 
-			.dropotron > li:first-child {
-				border-top: 0;
-			}
+/* מדיה קוואריז לרספונסיביות */
+@media screen and (max-width: 736px) {
+    #header {
+        flex-direction: column; /* בעמודות במובייל */
+        align-items: center; /* מרכוז במובייל */
+        padding: 1em 1.5em 0.5em 1.5em; /* התאמת ריפוד במובייל */
+    }
+
+    #logo {
+        margin-top: 0; /* ביטול העלאה למעלה במובייל */
+        margin-bottom: 1em; /* מרווח תחתון ללוגו במובייל */
+    }
+
+    #header nav {
+        width: 100%; /* תפריט ניווט ברוחב מלא במובייל */
+        padding: 0.5em 1em; /* ריפוד מותאם במובייל */
+    }
+
+    #header nav ul {
+        flex-direction: column; /* פריטי תפריט בעמודות במובייל */
+        align-items: center; /* מרכוז פריטי תפריט במובייל */
+    }
+
+    #header nav ul li {
+        margin: 0.5em 0; /* מרווח בין פריטי תפריט במובייל */
+    }
+}
 
 /* Banner */
 
