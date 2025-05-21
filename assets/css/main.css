@@ -2381,7 +2381,7 @@ input, select, textarea {
 						text-decoration: none;
 					}
 
-						#header nav ul li.submenu > a:before {
+						#header nav ul li.submenu > a:after {
 							-moz-osx-font-smoothing: grayscale;
 							-webkit-font-smoothing: antialiased;
 							display: inline-block;
@@ -2394,7 +2394,7 @@ input, select, textarea {
 							font-weight: 900;
 						}
 
-						#header nav ul li.submenu > a:before {
+						#header nav ul li.submenu > a:after {
 							content: '\f107';
 							margin-right: 0.65em;
 						}
