@@ -2267,7 +2267,7 @@ input, select, textarea {
     cursor: default;
     font-size: 0.8em;
     left: 0;
-    padding: 1em 1.5em; /* שומר על הריפוד המקורי של ההדר */
+    padding: 0em 0em; /* שומר על הריפוד המקורי של ההדר */
     position: static; /* שומר על position: static כפי שביקשת */
     top: 0;
     width: 100%;
