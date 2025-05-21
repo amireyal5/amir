@@ -2571,7 +2571,7 @@ input, select, textarea {
 #banner {
     background-attachment: fixed;
     background-color: #645862;
-    background-image: url("https://placehold.co/1920x600/645862/ffffff?text=Your+Hero+Image"); /* תמונה חלופית לדוגמה */
+    background-image: url("images/hero.webp"); /* תמונה חלופית לדוגמה */
     background-position: top center;
     background-repeat: no-repeat;
     background-size: cover;
