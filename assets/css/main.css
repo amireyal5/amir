@@ -2526,53 +2526,52 @@ input, select, textarea {
     }
 }
 
-/* Banner */
+/* Banner Animations */
+@-moz-keyframes reveal-banner {
+    0% {
+        opacity: 0;
+    }
 
-	@-moz-keyframes reveal-banner {
-		0% {
-			opacity: 0;
-		}
+    100% {
+        opacity: 1;
+    }
+}
 
-		100% {
-			opacity: 1;
-		}
-	}
+@-webkit-keyframes reveal-banner {
+    0% {
+        opacity: 0;
+    }
 
-	@-webkit-keyframes reveal-banner {
-		0% {
-			opacity: 0;
-		}
+    100% {
+        opacity: 1;
+    }
+}
 
-		100% {
-			opacity: 1;
-		}
-	}
+@-ms-keyframes reveal-banner {
+    0% {
+        opacity: 0;
+    }
 
-	@-ms-keyframes reveal-banner {
-		0% {
-			opacity: 0;
-		}
+    100% {
+        opacity: 1;
+    }
+}
 
-		100% {
-			opacity: 1;
-		}
-	}
+@keyframes reveal-banner {
+    0% {
+        opacity: 0;
+    }
 
-	@keyframes reveal-banner {
-		0% {
-			opacity: 0;
-		}
-
-		100% {
-			opacity: 1;
-		}
-	}
+    100% {
+        opacity: 1;
+    }
+}
 
 /* הסגנונות המקוריים שסופקו על ידך */
 #banner {
     background-attachment: fixed;
     background-color: #645862;
-    background-image: url("images/hero.webp"); /* תמונה חלופית לדוגמה */
+    background-image: url("https://placehold.co/1920x600/645862/ffffff?text=Your+Hero+Image"); /* תמונה חלופית לדוגמה */
     background-position: top center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -2641,12 +2640,6 @@ input, select, textarea {
     margin: 2em 0 0 0;
 }
 
-/* אנימציה לדוגמה (לא סופקה, אך נדרשת על ידי הסגנונות) */
-@keyframes reveal-banner {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
 /* ---------------------------------------------------------------------------------------------------- */
 /* תוספות שלי לרספונסיביות במובייל - באמצעות שאילתות מדיה */
 /* ---------------------------------------------------------------------------------------------------- */
@@ -2654,14 +2647,15 @@ input, select, textarea {
 /* סגנונות למסכים קטנים (לדוגמה, רוחב מקסימלי של 768 פיקסלים - טאבלטים ומטה) */
 @media screen and (max-width: 768px) {
     #banner {
-        padding: 4em 1em; /* הקטנת הריפוד הכללי במובייל */
+        padding: 10vh 1em; /* הקטנת ריפוד אנכי והפיכתו לרספונסיבי לגובה המסך */
+        min-height: 250px; /* גובה מינימלי לבאנר במובייל */
         background-attachment: scroll; /* שינוי ל-scroll במובייל למניעת בעיות תצוגה */
         text-align: center; /* יישור למרכז במובייל */
         justify-content: center; /* יישור אופקי למרכז */
     }
 
     #banner .inner {
-        padding: 1.5em; /* הקטנת הריפוד הפנימי לתוכן */
+        padding: 1em; /* הקטנת הריפוד הפנימי לתוכן */
         width: 90%; /* הגבלת רוחב התוכן הפנימי */
         max-width: 400px; /* רוחב מקסימלי כדי שלא יהיה רחב מדי */
     }
@@ -2680,18 +2674,19 @@ input, select, textarea {
 /* סגנונות למסכים קטנים מאוד (לדוגמה, רוחב מקסימלי של 480 פיקסלים - טלפונים קטנים) */
 @media screen and (max-width: 480px) {
     #banner {
-        padding: 3em 0.5em; /* ריפוד קטן עוד יותר */
-        min-height: 300px;
+        padding: 8vh 0.5em; /* ריפוד קטן עוד יותר ורספונסיבי */
+        min-height: 200px; /* גובה מינימלי קטן יותר למסכים קטנים מאוד */
     }
 
     #banner .inner {
-        padding: 1em; /* ריפוד מינימלי לתוכן הפנימי */
+        padding: 0.8em; /* ריפוד מינימלי לתוכן הפנימי */
     }
 
     #banner .inner header h2 {
         font-size: 1.5em;
     }
 }
+
 
 /* Main */
 
