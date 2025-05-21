@@ -2568,72 +2568,130 @@ input, select, textarea {
 		}
 	}
 
-	#banner {
-background-attachment: fixed;
-background-color: #645862;
-background-image: url("images/hero.webp");
-background-position: top center;
-background-repeat: no-repeat;
-background-size: cover;
-color: #fff;
-cursor: default;
-padding: 6em;
-text-align: right;
+/* הסגנונות המקוריים שסופקו על ידך */
+#banner {
+    background-attachment: fixed;
+    background-color: #645862;
+    background-image: url("https://placehold.co/1920x600/645862/ffffff?text=Your+Hero+Image"); /* תמונה חלופית לדוגמה */
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    cursor: default;
+    padding: 6em; /* ריפוד גדול לדסקטופ */
+    text-align: right;
+    min-height: 400px; /* גובה מינימלי לבאנר */
+    display: flex; /* שימוש בפלקסבוקס ליישור תוכן */
+    align-items: center; /* יישור אנכי למרכז */
+    justify-content: flex-end; /* יישור אופקי לימין */
+}
 
-	}
+#banner .inner {
+    /* אנימציות - נשארות כפי שהן */
+    -moz-animation: reveal-banner 1s 0.25s ease-in-out;
+    -webkit-animation: reveal-banner 1s 0.25s ease-in-out;
+    -ms-animation: reveal-banner 1s 0.25s ease-in-out;
+    animation: reveal-banner 1s 0.25s ease-in-out;
+    -moz-animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    -ms-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    background: rgba(52, 27, 43, 0.5);
+    color: #fff;
+    display: inline-block;
+    opacity: 0;
+    padding: 3em; /* ריפוד גדול לתוכן הפנימי */
+    text-align: center;
+    border-radius: 10px; /* פינות מעוגלות */
+}
 
-		#banner .inner {
-			-moz-animation: reveal-banner 1s 0.25s ease-in-out;
-			-webkit-animation: reveal-banner 1s 0.25s ease-in-out;
-			-ms-animation: reveal-banner 1s 0.25s ease-in-out;
-			animation: reveal-banner 1s 0.25s ease-in-out;
-			-moz-animation-fill-mode: forwards;
-			-webkit-animation-fill-mode: forwards;
-			-ms-animation-fill-mode: forwards;
-			animation-fill-mode: forwards;
-			background: rgba(52, 27, 43, 0.5);
-			color: #fff;
-			display: inline-block;
-			opacity: 0;
-			padding: 3em;
-			text-align: center;
-		}
+#banner .inner header {
+    display: inline-block;
+    border-bottom: solid 2px;
+    border-top: solid 2px;
+    margin: 0 0 2em 0;
+    padding: 3px 0 3px 0;
+}
 
-			#banner .inner header {
-				display: inline-block;
-				border-bottom: solid 2px;
-				border-top: solid 2px;
-				margin: 0 0 2em 0;
-				padding: 3px 0 3px 0;
-			}
+#banner .inner header h2 {
+    border-bottom: solid 2px;
+    border-top: solid 2px;
+    font-size: 2.5em;
+    font-weight: 900;
+    letter-spacing: 0.2em;
+    margin: 0;
+    padding-left: 0.05em; /* ריפוד שמאלי מקורי - נשאר כפי שהיה */
+    position: relative;
+    text-transform: uppercase;
+}
 
-				#banner .inner header h2 {
-					border-bottom: solid 2px;
-					border-top: solid 2px;
-					font-size: 2.5em;
-					font-weight: 900;
-					letter-spacing: 0.2em;
-					margin: 0;
-					padding-left: 0.05em;
-					position: relative;
-					text-transform: uppercase;
-				}
+#banner .inner p {
+    letter-spacing: 0.1em;
+    margin: 0;
+    text-transform: uppercase;
+}
 
-			#banner .inner p {
-				letter-spacing: 0.1em;
-				margin: 0;
-				text-transform: uppercase;
-			}
+#banner .inner p a {
+    color: inherit;
+    font-weight: 400;
+    text-decoration: none;
+}
 
-				#banner .inner p a {
-					color: inherit;
-					font-weight: 400;
-					text-decoration: none;
-				}
+#banner .inner footer {
+    margin: 2em 0 0 0;
+}
 
-			#banner .inner footer {
-				margin: 2em 0 0 0;
-			}
+/* אנימציה לדוגמה (לא סופקה, אך נדרשת על ידי הסגנונות) */
+@keyframes reveal-banner {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------------------------------------------------------------------------------------------------- */
+/* תוספות שלי לרספונסיביות במובייל - באמצעות שאילתות מדיה */
+/* ---------------------------------------------------------------------------------------------------- */
+
+/* סגנונות למסכים קטנים (לדוגמה, רוחב מקסימלי של 768 פיקסלים - טאבלטים ומטה) */
+@media screen and (max-width: 768px) {
+    #banner {
+        padding: 4em 1em; /* הקטנת הריפוד הכללי במובייל */
+        background-attachment: scroll; /* שינוי ל-scroll במובייל למניעת בעיות תצוגה */
+        text-align: center; /* יישור למרכז במובייל */
+        justify-content: center; /* יישור אופקי למרכז */
+    }
+
+    #banner .inner {
+        padding: 1.5em; /* הקטנת הריפוד הפנימי לתוכן */
+        width: 90%; /* הגבלת רוחב התוכן הפנימי */
+        max-width: 400px; /* רוחב מקסימלי כדי שלא יהיה רחב מדי */
+    }
+
+    #banner .inner header h2 {
+        font-size: 1.8em; /* הקטנת גודל הכותרת */
+        letter-spacing: 0.1em; /* הקטנת ריווח אותיות */
+    }
+
+    #banner .inner p {
+        font-size: 0.9em; /* הקטנת גודל הפסקה */
+        letter-spacing: 0.05em; /* הקטנת ריווח אותיות */
+    }
+}
+
+/* סגנונות למסכים קטנים מאוד (לדוגמה, רוחב מקסימלי של 480 פיקסלים - טלפונים קטנים) */
+@media screen and (max-width: 480px) {
+    #banner {
+        padding: 3em 0.5em; /* ריפוד קטן עוד יותר */
+        min-height: 300px;
+    }
+
+    #banner .inner {
+        padding: 1em; /* ריפוד מינימלי לתוכן הפנימי */
+    }
+
+    #banner .inner header h2 {
+        font-size: 1.5em;
+    }
+}
 
 /* Main */
 
