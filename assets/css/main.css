@@ -2860,7 +2860,7 @@ input, select, textarea {
 		/* Banner */
 
 			#banner {
-				background-size: 15em, 15em, auto, cover;
+				background-size: cover;
 			}
 
 		/* Main */
@@ -3315,7 +3315,7 @@ input, select, textarea {
 		/* Banner */
 
 			#banner {
-				
+				babackground-size: cover;
 				padding: 6em 0;
 			}
 
