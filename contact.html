@@ -4,158 +4,122 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html>
-<head>
-    <title>האתר שלי</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-    <style>
-        /* סגנונות כלליים לדוגמה, ייתכן שחלקם כבר קיימים בקובץ ה-main.css שלך */
-        body {
-            margin: 0;
-            font-family: 'Inter', sans-serif; /* שימוש בפונט Inter */
-            direction: rtl; /* כיוון מימין לשמאל */
-            text-align: right;
-        }
+<html lang="he" dir="rtl" style="font-family: Assistant, sans-serif;">
+	<head>
+		<title>Contact - Twenty by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="contact is-preload">
+		<div id="page-wrapper">
 
-        /* סגנונות עבור ההדר הראשי */
-        #header {
-            background-color: #ffffff; /* צבע רקע של ההדר כולו */
-            padding: 15px 0 0 0; /* ריפוד עליון בלבד, הריפוד התחתון יעבור לניווט */
-            display: flex; /* שימוש ב-flexbox לסידור הלוגו והניווט */
-            flex-direction: column; /* סידור אלמנטים בעמודה (אחד מתחת לשני) */
-            align-items: center; /* יישור מרכזי אופקי של הלוגו והניווט בתוך ההדר */
-            position: relative; /* נשאר relative אם נרצה למקם אלמנטים אחרים בתוכו בעתיד */
-            z-index: 10; /* ודא שההדר מעל אלמנטים אחרים אם יש חפיפה */
-        }
+			<!-- Header -->
+				<header id="header">
+					<h1 id="logo">
+    <a href="index.html">
+     <img src="images/logo.jpg" alt="לוגו האתר" style="max-height:200px; height: auto; width: auto;" />
+    </a>
+</h1>
+					<nav id="nav">
+						<ul>
+							<li class="current"><a href="index.html">בית</a></li>
+							<li class="current"><a href="about.html">אודות</a></li>
+							<li class="submenu">
+								<a href="#">שירותים</a>
+								<ul>
+									<li><a href="left-sidebar.html">Left Sidebar</a></li>
+									<li><a href="right-sidebar.html">Right Sidebar</a></li>
+									<li><a href="no-sidebar.html">No Sidebar</a></li>
+									<li><a href="contact.html">Contact</a></li>
+									<li class="submenu">
+										<a href="#">Submenu</a>
+										<ul>
+											<li><a href="#">Dolore Sed</a></li>
+											<li><a href="#">Consequat</a></li>
+											<li><a href="#">Lorem Magna</a></li>
+											<li><a href="#">Sed Magna</a></li>
+											<li><a href="#">Ipsum Nisl</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li><a href="#" class="button primary"> צרו קשר</a></li>
+						</ul>
+					</nav>
+				</header>
 
-        /* סגנונות ללוגו */
-        #logo {
-            margin-bottom: 15px; /* מרווח מתחת ללוגו לפני תפריט הניווט */
-        }
+			<!-- Main -->
+				<article id="main">
 
-        #logo img {
-            border-radius: 8px; /* פינות מעוגלות ללוגו */
-            /* סגנונות הגודל כבר מוגדרים ב-HTML inline */
-        }
+					<header class="special container">
+						<span class="icon solid fa-envelope"></span>
+						<h2>Get In Touch</h2>
+						<p>Use the form below to give /dev/null a piece of your mind.</p>
+					</header>
 
-        /* סגנונות עבור תפריט הניווט עצמו */
-        #nav {
-            background-color: #cccccc; /* צבע אפור לרקע של תפריט הניווט */
-            width: 100%; /* תופס רוחב מלא של ההדר */
-            padding: 10px 20px; /* ריפוד פנימי לתפריט הניווט */
-            box-sizing: border-box; /* ודא שהריפוד נכלל ברוחב ה-100% */
-            display: flex; /* לסידור פריטי הניווט בתוך הפס האפור */
-            justify-content: center; /* יישור מרכזי של פריטי הניווט */
-        }
+					<!-- One -->
+						<section class="wrapper style4 special container medium">
 
-        #nav ul {
-            list-style: none; /* הסר נקודות מהרשימה */
-            margin: 0;
-            padding: 0;
-            display: flex; /* ליצירת תפריט אופקי */
-        }
+							<!-- Content -->
+								<div class="content">
+									<form>
+										<div class="row gtr-50">
+											<div class="col-6 col-12-mobile">
+												<input type="text" name="name" placeholder="Name" />
+											</div>
+											<div class="col-6 col-12-mobile">
+												<input type="text" name="email" placeholder="Email" />
+											</div>
+											<div class="col-12">
+												<input type="text" name="subject" placeholder="Subject" />
+											</div>
+											<div class="col-12">
+												<textarea name="message" placeholder="Message" rows="7"></textarea>
+											</div>
+											<div class="col-12">
+												<ul class="buttons">
+													<li><input type="submit" class="special" value="Send Message" /></li>
+												</ul>
+											</div>
+										</div>
+									</form>
+								</div>
 
-        #nav li {
-            margin: 0 15px; /* רווח בין פריטי התפריט */
-        }
+						</section>
 
-        #nav a {
-            text-decoration: none; /* הסר קו תחתון מהקישורים */
-            color: #333;
-            font-weight: bold;
-            padding: 5px 0;
-            display: block;
-        }
+				</article>
 
-        /* סגנונות לכפתור ה"צור קשר" */
-        .button.primary {
-            border-radius: 8px; /* פינות מעוגלות לכפתור */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* צל קל לכפתור */
-            transition: background-color 0.3s ease, box-shadow 0.3s ease; /* אנימציה למעבר עכבר */
-        }
+			<!-- Footer -->
+				<footer id="footer">
 
-        .button.primary:hover {
-            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* צל עמוק יותר במעבר עכבר */
-        }
+					<ul class="icons">
+						<li><a href="#" class="icon brands circle fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon brands circle fa-facebook-f"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon brands circle fa-google-plus-g"><span class="label">Google+</span></a></li>
+						<li><a href="#" class="icon brands circle fa-github"><span class="label">Github</span></a></li>
+						<li><a href="#" class="icon brands circle fa-dribbble"><span class="label">Dribbble</span></a></li>
+					</ul>
 
-        /* סגנונות לאזור התוכן הראשי */
-        #main {
-            padding-top: 20px; /* מרווח עליון כדי שהתוכן לא ידבק לפס האפור */
-        }
-    </style>
-</head>
-<body class="homepage is-preload">
-    <div id="page-wrapper">
+					<ul class="copyright">
+						<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
 
-        <header id="header">
-            <h1 id="logo">
-                <a href="index.html">
-                    <img src="https://placehold.co/200x200/cccccc/333333?text=Logo" alt="לוגו האתר" style="max-height:200px; height: auto; width: auto;" />
-                </a>
-            </h1>
-            <nav id="nav">
-                <ul>
-                    <li class="current"><a href="index.html">בית</a></li>
-                    <li class="current"><a href="about.html">אודות</a></li>
-                    <li class="submenu">
-                        <a href="#">שירותים</a>
-                        <ul>
-                            <li><a href="left-sidebar.html">Left Sidebar</a></li>
-                            <li><a href="right-sidebar.html">Right Sidebar</a></li>
-                            <li><a href="no-sidebar.html">No Sidebar</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                            <li class="submenu">
-                                <a href="#">Submenu</a>
-                                <ul>
-                                    <li><a href="#">Dolore Sed</a></li>
-                                    <li><a href="#">Consequat</a></li>
-                                    <li><a href="#">Lorem Magna</a></li>
-                                    <li><a href="#">Sed Magna</a></li>
-                                    <li><a href="#">Ipsum Nisl</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li><a href="#" class="button primary"> צרו קשר</a></li>
-                </ul>
-            </nav>
-        </header>
+				</footer>
 
-        <article id="main">
-            <header class="special container">
-                <span class="icon solid fa-envelope"></span>
-                <h2>Get In Touch</h2>
-                <p>Use the form below to give /dev/null a piece of your mind.</p>
-            </header>
+		</div>
 
-            </article>
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollgress.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
 
-        <!-- <footer id="footer">
-            <ul class="icons">
-                <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-                <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-                <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-                <li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-                <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-            </ul>
-            <ul class="copyright">
-                <li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-            </ul>
-        </footer> -->
-
-    </div>
-
-    <!-- <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.dropotron.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script> -->
-
-</body>
+	</body>
 </html>
