@@ -2266,10 +2266,8 @@ input, select, textarea {
     color: inherit;
     cursor: default;
     font-size: 0.8em;
-    left: 0;
     padding: 0em 0em;
     position: static;
-    top: 0;
     width: 100%;
     z-index: 10000;
     display: flex;
