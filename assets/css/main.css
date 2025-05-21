@@ -2406,6 +2406,7 @@ input, select, textarea {
     box-shadow: none;
     color: #fff;
     padding: 0em 0em;
+    padding-top: 2em;
 }
 
 /* סגנונות לאזור התוכן הראשי */
