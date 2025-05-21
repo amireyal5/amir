@@ -2283,7 +2283,7 @@ input, select, textarea {
 #logo {
     font-weight: 900;
     margin: 0;
-    margin-top: -1.5em; /* העלאת הלוגו למעלה */
+    margin-right: 15em; 
     /* ייתכן שיהיה צורך להתאים את הערך הזה בהתאם לגודל הלוגו והעיצוב הספציפי */
 }
 
