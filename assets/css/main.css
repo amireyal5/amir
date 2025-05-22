@@ -2327,12 +2327,13 @@ input, select, textarea {
 
 #header nav ul li a {
     border: solid 1px transparent;
-    color: #fff;
+    color: #645862;
     display: inline-block;
     line-height: 1em;
     padding: 0.6em 0.75em;
     text-decoration: none;
     font-weight: 400;
+	font-size: large;
 }
 
 #header nav ul li input[type="button"],
