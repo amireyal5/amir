@@ -2327,7 +2327,7 @@ input, select, textarea {
 
 #header nav ul li a {
     border: solid 1px transparent;
-    color: #433d3d;
+    color: #7c8081;
     display: inline-block;
     line-height: 1em;
     padding: 0.6em 0.75em;
@@ -2341,9 +2341,9 @@ input, select, textarea {
 #header nav ul li button,
 #header nav ul li .button {
     font-size: 1em;
-    min-width: 0;
+    min-width: 0em;
     width: auto;
-    border-radius: 8px; /* פינות מעוגלות לכפתור */
+    border-radius: 1px; /* פינות מעוגלות לכפתור */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* צל קל לכפתור */
     transition: background-color 0.3s ease, box-shadow 0.3s ease; /* אנימציה למעבר עכבר */
 }
@@ -2580,8 +2580,8 @@ input, select, textarea {
 	padding: 6em 6em;
 	text-align: right;
 	display: flex;
-	justify-content: center;
-	align-items: center;
+	justify-content: justify-content;
+	align-items: align-items;
 	min-height: 100vh;
 	position: relative;
 }
