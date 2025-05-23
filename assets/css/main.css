@@ -3390,3 +3390,48 @@ input, select, textarea {
 				height: 34px;
 			}
 
+/* התאמות לקטע ההיכרות עם עמיר */
+.wrapper.style5 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: right;
+  gap: 2rem;
+}
+
+.wrapper.style5 .profile-image img {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.wrapper.style5 .profile-text p {
+  margin: 0.2rem 0;
+  line-height: 1.4;
+}
+
+.wrapper.style5 .profile-text h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: inherit;
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper.style5 {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .wrapper.style5 .profile-image img {
+    width: 240px;
+    height: 240px;
+  }
+
+  .wrapper.style5 .profile-text {
+    padding: 0 1rem;
+  }
+}
