@@ -90,6 +90,28 @@
             margin: 0 auto 1rem;
             display: block;
         }
+
+        /* רווח אנכי בין השורות */
+        .row + .row {
+            margin-top: 3rem; /* ניתן לשנות לפי הצורך */
+        }
+
+        /* גובה אחיד לכל כרטיס */
+        .service-card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background: #fff;
+            padding: 1rem;
+            box-sizing: border-box;
+        }
+
+        /* יישור הכפתור לתחתית */
+        .service-card footer {
+            margin-top: auto;
+            padding-top: 1rem;
+        }
     </style>
 
     <header>
@@ -99,7 +121,7 @@
     <!-- שורה ראשונה -->
     <div class="row">
         <div class="col-4 col-12-narrower">
-            <section>
+            <section class="service-card">
                 <div class="service-img">
                     <img src="images/anxity.webp" alt="חרדה">
                 </div>
@@ -115,7 +137,7 @@
             </section>
         </div>
         <div class="col-4 col-12-narrower">
-            <section>
+            <section class="service-card">
                 <div class="service-img">
                     <img src="images/crisis.webp" alt="משבר">
                 </div>
@@ -131,7 +153,7 @@
             </section>
         </div>
         <div class="col-4 col-12-narrower">
-            <section>
+            <section class="service-card">
                 <div class="service-img">
                     <img src="images/relations.webp" alt="מערכות יחסים">
                 </div>
@@ -151,7 +173,7 @@
     <!-- שורה שנייה -->
     <div class="row">
         <div class="col-4 col-12-narrower">
-            <section>
+            <section class="service-card">
                 <div class="service-img">
                     <img src="images/parenting2.webp" alt="הורים">
                 </div>
@@ -167,7 +189,7 @@
             </section>
         </div>
         <div class="col-4 col-12-narrower">
-            <section>
+            <section class="service-card">
                 <div class="service-img">
                     <img src="images/hero-divorce.webp" alt="גירושים">
                 </div>
@@ -183,7 +205,7 @@
             </section>
         </div>
         <div class="col-4 col-12-narrower">
-            <section>
+            <section class="service-card">
                 <div class="service-img">
                     <img src="images/HeroHP.webp" alt="התמכרויות">
                 </div>
@@ -200,6 +222,7 @@
         </div>
     </div>
 </section>
+
 
 
 				</article>
