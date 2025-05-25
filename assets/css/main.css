@@ -129,7 +129,7 @@ input, select, textarea {
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #3a4944;
+		color: inherit;
 		font-weight: 900;
 		line-height: 2.75em;
 		margin-bottom: 1em;
@@ -2613,8 +2613,8 @@ input, select, textarea {
 			}
 
 				#banner .inner header h2 {
-					border-bottom: solid 2px;
-					border-top: solid 2px;
+					border-bottom: solid 0px;
+					border-top: solid 0px;
 					font-size: 2.5em;
 					font-weight: 900;
 					letter-spacing: 0.2em;
