@@ -7,6 +7,32 @@
 <html lang="he" dir="rtl" style="font-family: Assistant, sans-serif;">
 	<head>
 <style>
+
+    /* ספינר */
+    .loading-spinner {
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        border: 2px solid #fff;
+        border-radius: 50%;
+        border-top: 2px solid #3498db;
+        animation: spin 1s linear infinite;
+        margin-right: 0.5em;
+        vertical-align: middle;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    /* מצב כפתור בטעינה */
+    #contactForm button.loading,
+    #contactForm input[type="submit"].loading {
+        background-color: #ccc;
+        cursor: not-allowed;
+        opacity: 0.8;
+    }
     /* שדרוג עיצוב שדות הטופס */
     input[type="text"],
     input[type="email"],
@@ -175,50 +201,50 @@
 
 <!-- סקריפט לטופס -->
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const form = document.getElementById('contactForm');
-        const formMessage = document.getElementById('form-message');
-        const nameInput = document.getElementById('name');
-        const subjectInput = document.getElementById('subject');
-        const textarea = document.getElementById('content');
+    form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const formData = new FormData(form);
+    const submitBtn = form.querySelector('input[type="submit"]');
 
-        nameInput.addEventListener('input', function () {
-            subjectInput.value = `פנייה חדשה מהאתר שלך - ${nameInput.value}`;
+    // שנה טקסט + הוסף ספינר
+    submitBtn.disabled = true;
+    submitBtn.classList.add('loading');
+    const originalText = submitBtn.value;
+    submitBtn.value = '';
+    const spinner = document.createElement('span');
+    spinner.className = 'loading-spinner';
+    submitBtn.parentElement.appendChild(spinner);
+    submitBtn.parentElement.appendChild(document.createTextNode('שולח...'));
+
+    try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: formData
         });
 
-        form.addEventListener('submit', async (event) => {
-            event.preventDefault();
-            const formData = new FormData(form);
+        if (response.ok) {
+            formMessage.className = 'form-message success';
+            formMessage.textContent = 'הודעה נשלחה בהצלחה! ניצור קשר בהקדם.';
+            form.reset();
+        } else {
+            const errorData = await response.json();
+            console.error('שגיאה בשליחת הטופס:', errorData);
+            formMessage.className = 'form-message error';
+            formMessage.textContent = 'אירעה שגיאה בשליחת ההודעה. אנא נסו שוב מאוחר יותר.';
+        }
+    } catch (error) {
+        console.error('שגיאה כללית:', error);
+        formMessage.className = 'form-message error';
+        formMessage.textContent = 'אירעה שגיאה כללית. אנא נסו שוב מאוחר יותר.';
+    }
 
-            try {
-                const response = await fetch('https://api.web3forms.com/submit', {
-                    method: 'POST',
-                    body: formData
-                });
-
-                if (response.ok) {
-                    formMessage.className = 'form-message success';
-                    formMessage.textContent = 'הודעה נשלחה בהצלחה! ניצור קשר בהקדם.';
-                    form.reset();
-                } else {
-                    const errorData = await response.json();
-                    console.error('שגיאה בשליחת הטופס:', errorData);
-                    formMessage.className = 'form-message error';
-                    formMessage.textContent = 'אירעה שגיאה בשליחת ההודעה. אנא נסו שוב מאוחר יותר.';
-                }
-            } catch (error) {
-                console.error('שגיאה כללית:', error);
-                formMessage.className = 'form-message error';
-                formMessage.textContent = 'אירעה שגיאה כללית. אנא נסו שוב מאוחר יותר.';
-            }
-        });
-
-        // התאמת גובה אוטומטית לטקסט
-        textarea.addEventListener('input', function () {
-            this.style.height = 'auto';
-            this.style.height = (this.scrollHeight) + 'px';
-        });
-    });
+    // השבת טעינה
+    submitBtn.disabled = false;
+    submitBtn.classList.remove('loading');
+    submitBtn.value = originalText;
+    spinner.remove();
+    submitBtn.parentElement.lastChild.remove(); // מסיר את 'שולח...'
+});
 </script>
 
 <!-- סגנון להודעת שליחה -->
