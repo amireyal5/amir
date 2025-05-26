@@ -2569,23 +2569,22 @@ input, select, textarea {
 		}
 	}
 
-	#banner {
-	background-color: #645862;
-	background-image: url("../../images/hero_image.webp");
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-attachment: fixed;
-	color: #fff;
-	cursor: default;
-	padding: 6em 6em;
-	text-align: right;
-	display: flex;
-	justify-content: flex-start;
-	align-items: self-start;
-	min-height: 0vh;
-	position: relative;
+.banner {
+    background-color: #645862;
+    background-image: url(../../images/hero_image.webp);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    color: #fff;
+    cursor: default;
+    padding: 0 12em;
+    text-align: right;
+    display: flex;
+    justify-content: flex-start;
+    min-height: 80vh;
+    position: relative;
 }
+
 
 		#banner .inner {
 			-moz-animation: reveal-banner 1s 0.25s ease-in-out;
