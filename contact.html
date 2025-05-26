@@ -6,6 +6,77 @@
 -->
 <html lang="he" dir="rtl" style="font-family: Assistant, sans-serif;">
 	<head>
+<style>
+    /* שדרוג עיצוב שדות הטופס */
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        border: 2px solid #ccc;
+        border-radius: 12px;
+        padding: 1em;
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 1em;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        background: #fdfdfd;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    textarea:focus {
+        border-color: #0078d4;
+        box-shadow: 0 0 5px rgba(0, 120, 212, 0.4);
+        outline: none;
+        background: #fff;
+    }
+
+    /* כפתור שליחה */
+    .buttons input[type="submit"].special {
+        background: linear-gradient(to right, #0078d4, #00bcd4);
+        color: white;
+        font-weight: bold;
+        border: none;
+        border-radius: 25px;
+        padding: 0.75em 2em;
+        font-size: 1.1em;
+        cursor: pointer;
+        transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .buttons input[type="submit"].special:hover {
+        background: linear-gradient(to right, #005fa3, #0097a7);
+        transform: scale(1.03);
+    }
+
+    /* אנימציה קלה לכותרת */
+    header.special.container h2 {
+        animation: fadeInUp 1s ease-out;
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* סגנון לתיבת ההודעה */
+    .form-message {
+        font-weight: bold;
+        font-size: 1.1em;
+    }
+
+    .wrapper.style4 {
+        background: #ffffff;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+        border-radius: 20px;
+        padding: 3em 2em;
+    }
+</style>
 		<title>עמיר אייל פסיכותרפיה והדרכת הורים תרו קשר</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
