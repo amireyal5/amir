@@ -2592,7 +2592,7 @@ input, select, textarea {
   object-fit: cover;
   object-position: center;
   z-index: 1;
-  filter: brightness(0.4); /* כהות קלה כדי שהטקסט יבלוט */
+  filter: brightness(0.4); /* כהות  קלה כדי שהטקסט יבלוט */
 }
 
 /* שכבת הטקסט */
