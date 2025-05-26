@@ -50,14 +50,13 @@
 					</nav>
 				</header>
 
-			<!-- Main -->
-			
+<!-- Main -->
 <article id="main">
 
     <header class="special container">
         <span class="icon solid fa-envelope"></span>
         <h2>צרו קשר</h2>
-        <p>אם יש לכם שאלות או שאתם מעוניינים לקבוע פגישה – מוזמנים ליצור קשר</p>
+        <p>אם יש לכם שאלות או שאתם מעוניינים לקבוע פגישה, אשמח לשמוע מכם.</p>
     </header>
 
     <!-- One -->
@@ -71,13 +70,13 @@
 
                 <div class="row gtr-50">
                     <div class="col-6 col-12-mobile">
-                        <input type="text" id="name" name="שם מלא" placeholder="שם מלא" required autocomplete="name" />
+                        <input type="text" id="name" name="שם מלא" placeholder="שם מלא" required autocomplete="name">
                     </div>
                     <div class="col-6 col-12-mobile">
-                        <input type="email" id="email" name="מייל" placeholder="מייל" required autocomplete="email" />
+                        <input type="tel" id="phone" name="טלפון" placeholder="טלפון" required autocomplete="tel">
                     </div>
                     <div class="col-12">
-                        <input type="tel" id="phone" name="טלפון" placeholder="טלפון" required autocomplete="tel" />
+                        <input type="email" id="email" name="מייל" placeholder="מייל" required autocomplete="email">
                     </div>
                     <div class="col-12">
                         <textarea id="content" name="תוכן הפניה" placeholder="תוכן הפניה" rows="7" required></textarea>
@@ -86,9 +85,9 @@
                         <ul class="buttons">
                             <li><input type="submit" class="special" value="שלח" /></li>
                         </ul>
-                        <div id="form-message" class="form-message" style="margin-top: 1em;"></div>
                     </div>
                 </div>
+                <div id="form-message" class="form-message" style="margin-top: 1em;"></div>
             </form>
         </div>
 
@@ -96,14 +95,13 @@
 
 </article>
 
-<!-- Script -->
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const form = document.getElementById('contactForm');
         const formMessage = document.getElementById('form-message');
-        const textarea = document.getElementById('content');
         const nameInput = document.getElementById('name');
         const subjectInput = document.getElementById('subject');
+        const textarea = document.getElementById('content');
 
         nameInput.addEventListener('input', function () {
             subjectInput.value = `פנייה חדשה מהאתר שלך - ${nameInput.value}`;
@@ -111,6 +109,7 @@
 
         form.addEventListener('submit', async (event) => {
             event.preventDefault();
+
             const formData = new FormData(form);
 
             try {
@@ -136,13 +135,26 @@
             }
         });
 
-        // אוטוגידול של textarea
         textarea.addEventListener('input', function () {
             this.style.height = 'auto';
             this.style.height = (this.scrollHeight) + 'px';
         });
     });
 </script>
+
+<style>
+    /* סגנון מותאם להודעת הצלחה/שגיאה */
+    .form-message.success {
+        color: green;
+        text-align: center;
+    }
+
+    .form-message.error {
+        color: red;
+        text-align: center;
+    }
+</style>
+
 
 			<!-- Footer -->
 				<footer id="footer">
