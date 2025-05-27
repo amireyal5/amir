@@ -2623,6 +2623,7 @@ input, select, textarea {
 		background-repeat: no-repeat;
 		background-size: 25em;
 		padding: 7em 0;
+		background-color: #f5f5dc75;
 	}
 
 		#main > :last-child {
